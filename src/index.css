@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ====== THEMA ====== */
+:root {
+  --green: #2fa84f; /* primaire kleur */
+  --green-dark: #279043;
+  --green-light: #3ccc63;
+  --ink: #0f172a; /* donkere tekst */
+  --muted: #6b7280; /* subtiele tekst */
+}
+
+/* Basis */
+html,
+body,
+#root {
+  height: 100%;
+  background: #fff;
+  color: var(--ink);
+}
+.text-muted-foreground {
+  color: var(--muted);
+}
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ====== KNOPPEN ====== */
+.btn {
+  @apply inline-flex items-center justify-center rounded-xl text-sm px-4 py-2 transition active:scale-[.98];
+}
+
+/* Primair (vol groen) */
+.btn-primary {
+  background: var(--green);
+  color: #fff;
+  border: 1px solid var(--green);
+  box-shadow: 0 6px 16px rgba(47, 168, 79, 0.25);
+}
+.btn-primary:hover {
+  filter: brightness(1.05);
+}
+.btn-primary:active {
+  filter: brightness(0.98);
+}
+.btn-primary:focus-visible {
+  outline: 2px solid var(--green-light);
+  outline-offset: 2px;
+}
+
+/* Secundair (licht groen) */
+.btn-secondary {
+  background: #e8f8ee; /* zeer licht groen */
+  color: #0c3b1b;
+  border: 1px solid #c3ebd1;
+}
+.btn-secondary:hover {
+  filter: brightness(1.03);
+}
+.btn-secondary:active {
+  filter: brightness(0.98);
+}
+.btn-secondary:focus-visible {
+  outline: 2px solid #c3ebd1;
+  outline-offset: 2px;
+}
+
+/* Outline (transparant, groene rand/tekst) */
+.btn-outline {
+  background: transparent;
+  color: var(--green);
+  border: 1px solid var(--green);
+}
+.btn-outline:hover {
+  background: rgba(47, 168, 79, 0.08);
+}
+.btn-outline:active {
+  filter: brightness(0.98);
+}
+.btn-outline:focus-visible {
+  outline: 2px solid var(--green-light);
+  outline-offset: 2px;
+}
+
+/* Ronde actieknoppen (+ / −) */
+.btn-round {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ====== TABS ====== */
+.tabbar {
+  @apply flex gap-2 mb-4;
+}
+.tabbar button {
+  @apply px-3 py-1.5 rounded-lg text-sm transition;
+  background: #f3f4f6; /* licht grijs */
+  color: #374151;
+  border: 1px solid #e5e7eb;
+}
+.tabbar button:hover {
+  background: #eef2f7;
+}
+.tabbar button[data-active='true'] {
+  background: var(--green);
+  color: #fff;
+  border-color: var(--green);
+  box-shadow: 0 4px 12px rgba(47, 168, 79, 0.25);
+}
+
+/* ====== KAARTEN & LIJST ====== */
+.card {
+  @apply rounded-2xl border bg-white;
+  border-color: #e5e7eb;
+}
+.list-row {
+  @apply rounded border bg-white px-3 py-2 flex items-center justify-between;
+  border-color: #e5e7eb;
+}
+
+/* ====== BADGES (posities) ====== */
+.badge {
+  @apply inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: #f9fafb;
+  color: #111827;
+}
+.pos-keeper {
+  background: #1f2937;
+  color: #fff;
+} /* donker neutraal */
+.pos-verdediger {
+  background: #f3f4f6;
+  color: #111827;
+} /* neutraal */
+.pos-middenveld {
+  background: #dcfce7;
+  color: #052e1a;
+} /* zacht groen */
+.pos-aanvaller {
+  background: #fee2e2;
+  color: #3b0a0f;
+} /* zacht rood */
+
+/* ====== INPUTS ====== */
+input,
+select,
+textarea {
+  @apply border rounded px-2 py-2;
+  border-color: #e5e7eb;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid rgba(47, 168, 79, 0.35);
+  outline-offset: 1px;
+  border-color: var(--green);
+}
+
+/* ====== MISC ====== */
+/* Zorg dat icon-knoppen zonder tekst netjes centreren */
+.icon-btn {
+  @apply inline-flex items-center justify-center;
+}
