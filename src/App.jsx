@@ -184,11 +184,10 @@ export default function App() {
         <header className="flex items-center justify-between gap-4">
           <div>
             <h1 className="text-2xl md:text-3xl font-semibold tracking-tight">
-              ⚽️ Coach Assistent
+              ⚽️ Wizzl
             </h1>
             <p className="text-sm text-muted-foreground">
-              Wissels & teamoverzichten — met geluid, suggesties en +/−
-              correctie.
+              Wissels & teamoverzichten
             </p>
           </div>
           <div className="flex gap-2">
